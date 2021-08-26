@@ -19,9 +19,8 @@ async function seed() {
     /**
      * Version not using transactions.
      */
-
-    const users = await User.insertMany(usersJSON);
-    await Post.insertMany(postsJSON);
+    // const users = await User.insertMany(usersJSON);
+    // await Post.insertMany(postsJSON);
 
     const users = await User.insertMany([usersJSON], { session: session });
     await Post.insertMany([postsJSON], {
